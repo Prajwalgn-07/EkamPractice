@@ -2,7 +2,7 @@
   "desiredCapabilities": {
   },
   "arguments": [
-    "start-fullscreen"
+    "incognito","start-fullscreen"
   ],
   "preferences": {
   },

@@ -1,0 +1,13 @@
+{
+  "desiredCapabilities": {
+  },
+  "arguments": [
+    "start-fullscreen"
+  ],
+  "preferences": {
+  },
+  "extensions": [
+  ],
+  "experimentalOptions": {
+  }
+}

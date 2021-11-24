@@ -1,0 +1,15 @@
+{
+  "desiredCapabilities": {
+  },
+  "arguments": [
+  ],
+  "preferences": {
+  },
+  "extensions": [
+  ],
+  "experimentalOptions": {
+    "mobileEmulation": {
+      "deviceName" : "iPhone 7"
+    }
+  }
+}

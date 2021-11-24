@@ -2,11 +2,20 @@ package Pages;
 
 import com.testvagrant.ekam.reports.annotations.WebStep;
 import com.testvagrant.ekam.atoms.web.WebPage;
+import jdk.jfr.Timespan;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.text.BreakIterator;
+import java.time.Duration;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
+
 
 public class CreateAccountPage extends WebPage {
     private By firstName = queryByName("customer[first_name]");
@@ -14,7 +23,6 @@ public class CreateAccountPage extends WebPage {
     private By emailId = queryByName("customer[email]");
     private By password = queryByName("customer[password]");
     private By createButton = query("//button[normalize-space()='Create']");
-
     @WebStep(keyword = "When", description = "I fill first Name")
     public CreateAccountPage fillFirstName(String firstName) {
         element(this.firstName).click();
@@ -44,9 +52,15 @@ public class CreateAccountPage extends WebPage {
     }
 
     @WebStep(keyword = "When", description = "I press on create button")
-    public CreateAccountPage clickCreateButton() {
-       element(createButton).click();
-       return this;
+    public CreateAccountPage clickCreateButton(){
+        element(createButton).click();
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        try {
+            wait.until(ExpectedConditions.titleIs("Challenge – ul-web-playground"));
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return this;
     }
 
 }

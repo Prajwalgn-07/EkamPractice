@@ -55,11 +55,7 @@ public class CreateAccountPage extends WebPage {
     public CreateAccountPage clickCreateButton(){
         element(createButton).click();
         WebDriverWait wait = new WebDriverWait(driver,10);
-        try {
-            wait.until(ExpectedConditions.titleIs("Challenge – ul-web-playground"));
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+        wait.until(ExpectedConditions.titleIs("Challenge – ul-web-playground"));
         return this;
     }
 

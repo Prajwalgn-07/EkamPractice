@@ -5,6 +5,8 @@ import com.testvagrant.ekam.atoms.web.WebPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends WebPage {
     private By createAccount= query("//a[contains(text(),\"Create account\")]");
@@ -37,6 +39,8 @@ public class LoginPage extends WebPage {
     @WebStep(keyword = "When", description = "I click on login Button")
     public LoginPage clickOnSignInButton() {
         element(this.signIn).click();
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.titleIs("Account – ul-web-playground"));
         return this;
     }
 

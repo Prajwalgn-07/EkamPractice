@@ -52,10 +52,10 @@ public class CreateAccountPage extends WebPage {
     }
 
     @WebStep(keyword = "When", description = "I press on create button")
-    public CreateAccountPage clickCreateButton(){
+    public CreateAccountPage clickCreateButton() {
         element(createButton).click();
-        WebDriverWait wait = new WebDriverWait(driver,10);
-        wait.until(ExpectedConditions.titleIs("Challenge – ul-web-playground"));
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.titleIs("ul-web-playground"));
         return this;
     }
 

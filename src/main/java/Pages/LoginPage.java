@@ -40,7 +40,7 @@ public class LoginPage extends WebPage {
     public LoginPage clickOnSignInButton() {
         element(this.signIn).click();
         WebDriverWait wait = new WebDriverWait(driver,10);
-        wait.until(ExpectedConditions.titleIs("Account – ul-web-playground"));
+        wait.until(ExpectedConditions.titleIs("Account-ul-web-playground"));
         return this;
     }
 

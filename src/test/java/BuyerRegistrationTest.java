@@ -5,21 +5,16 @@ import com.testvagrant.ekam.commons.data.DataSetsClient;
 import com.testvagrant.ekam.testBases.testng.WebTest;
 
 import static com.testvagrant.ekam.commons.LayoutInitiator.*;
-
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import sun.security.util.Password;
 
 import javax.inject.Inject;
 
-import static org.testng.Assert.*;
 
 public class BuyerRegistrationTest extends WebTest {
     @Inject private DataSetsClient dataSetsClient;
 
 
-    @Test(groups = "web")
+    @Test(groups ="web")
     public void ValidCredentials() {
         Page(HomePage.class).getLoginPage();
         Page(LoginPage.class).getCreateAccountPage();

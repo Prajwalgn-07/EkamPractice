@@ -1,6 +1,6 @@
-import Pages.CreateAccountPage;
-import Pages.HomePage;
-import Pages.LoginPage;
+import web.Pages.CreateAccountPage;
+import web.Pages.HomePage;
+import web.Pages.LoginPage;
 import com.testvagrant.ekam.commons.data.DataSetsClient;
 import com.testvagrant.ekam.testBases.testng.WebTest;
 

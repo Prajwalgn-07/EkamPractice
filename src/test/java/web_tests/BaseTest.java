@@ -1,3 +1,5 @@
+package web_tests;
+
 import com.testvagrant.ekam.testBases.testng.WebTest;
 
 import org.openqa.selenium.WebDriver;

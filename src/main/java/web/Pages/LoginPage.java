@@ -1,10 +1,8 @@
-package Pages;
+package web.Pages;
 
 import com.testvagrant.ekam.reports.annotations.WebStep;
 import com.testvagrant.ekam.atoms.web.WebPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 

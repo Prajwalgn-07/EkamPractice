@@ -1,7 +1,6 @@
-package Pages;
+package web.Pages;
 
 import com.testvagrant.ekam.reports.annotations.WebStep;
-import com.testvagrant.ekam.atoms.web.WebPage;
 import org.openqa.selenium.By;
 
 public class HomePageResponsive extends HomePage {

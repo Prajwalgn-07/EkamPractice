@@ -1,20 +1,12 @@
-package Pages;
+package web.Pages;
 
 import com.testvagrant.ekam.reports.annotations.WebStep;
 import com.testvagrant.ekam.atoms.web.WebPage;
-import jdk.jfr.Timespan;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
-import java.util.NoSuchElementException;
-import java.util.concurrent.TimeUnit;
+import javax.inject.Inject;
 
 
 public class CreateAccountPage extends WebPage {
@@ -55,7 +47,7 @@ public class CreateAccountPage extends WebPage {
     public CreateAccountPage clickCreateButton() {
         element(createButton).click();
         WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.titleIs("ul-web-playground"));
+        wait.until(ExpectedConditions.titleContains("ul-web-playground"));
         return this;
     }
 

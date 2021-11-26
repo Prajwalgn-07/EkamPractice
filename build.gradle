@@ -83,12 +83,6 @@ task runWebTests(type: Test) {
         excludeTestsMatching "*.api.*"
         excludeTestsMatching "*.db.*"
     }
-    systemProperties = [
-            config: System.getProperty("config"),
-            BROWSERSTACK_USERNAME: System.getProperty("BROWSERSTACK_USERNAME"),
-            BROWSERSTACK_ACCESS_KEY: System.getProperty("BROWSERSTACK_ACCESS_KEY")
-    ]
-
     outputs.upToDateWhen { false }
     useTestNG {
         parallel = "methods"
@@ -99,6 +93,9 @@ task runWebTests(type: Test) {
         outputDirectory = file("$buildDir/" + System.getProperty('tags', 'NONE'))
     }
 }
+
+
+
 
 task runMobileTests(type: Test) {
     filter {

@@ -1,3 +1,5 @@
+package web_tests;
+
 import web.Pages.CreateAccountPage;
 import web.Pages.HomePage;
 import web.Pages.LoginPage;
@@ -9,7 +11,7 @@ import org.testng.annotations.Test;
 
 import javax.inject.Inject;
 
-
+@Test(groups ="web")
 public class BuyerRegistrationTest extends WebTest {
     @Inject private DataSetsClient dataSetsClient;
 

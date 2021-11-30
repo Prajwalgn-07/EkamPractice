@@ -10,8 +10,8 @@ import com.testvagrant.ekam.reports.annotations.APIStep;
 public class GetListOfUserClient extends RetrofitBaseClient {
 
     private interface GetListOfUserService {
-        @GET("/api/users/2")
-        Call<GetListOfUserResponse> listOfUser();
+        @GET("/api/users?")
+        Call<GetListOfUserResponse> listOfUser(@Query("page")String page);
     }
 
     private final GetListOfUserService service;
@@ -23,8 +23,8 @@ public class GetListOfUserClient extends RetrofitBaseClient {
     }
 
     @APIStep(keyword = "When", description = "I invoke getListOfUser")
-    public GetListOfUserResponse getListOfUser() {
-        Call<GetListOfUserResponse>call=service.listOfUser();
+    public GetListOfUserResponse getListOfUser(String page) {
+        Call<GetListOfUserResponse>call=service.listOfUser(page);
         return httpClient.execute(call);
     }
 

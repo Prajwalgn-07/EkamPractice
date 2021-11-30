@@ -4,6 +4,8 @@ import data_clients.UserInfoDataClient;
 import api.User.loginUser.*;
 import com.testvagrant.ekam.testBases.testng.APITest;
 import static com.testvagrant.ekam.commons.LayoutInitiator.*;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import javax.inject.Inject;
@@ -18,7 +20,7 @@ public class Login extends APITest {
                                                 .password(userInfoDataClient.getApiDetails().getPassword())
                                                 .build();
         LoginUserResponse loginUserResponse=Client(LoginUserClient.class).loginUser(loginUserRequest);
-        System.out.println(loginUserResponse.getToken());
+        Assert.assertEquals("QpwL5tke4Pnpja7X4",loginUserResponse.getToken());
     }
 
     @Test(groups = "api",priority = 1)
@@ -28,6 +30,6 @@ public class Login extends APITest {
                                                                         .email(userInfoDataClient.getApiDetails().getEmailId())
                                                                         .build();
         LoginUserNegativeResponse loginUserNegativeResponse=Client(LoginUserClient.class).loginUser(loginUserNegativeRequest);
-        System.out.println(loginUserNegativeResponse.getError());
+        Assert.assertEquals("Missing password",loginUserNegativeResponse.getError());
     }
 }

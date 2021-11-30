@@ -1,5 +1,7 @@
 package web_tests;
 
+import data_clients.UserInfoDataClient;
+import org.testng.annotations.BeforeMethod;
 import web.Pages.CreateAccountPage;
 import web.Pages.HomePage;
 import web.Pages.LoginPage;
@@ -13,18 +15,17 @@ import javax.inject.Inject;
 
 @Test(groups ="web")
 public class BuyerRegistrationTest extends WebTest {
-    @Inject private DataSetsClient dataSetsClient;
-
+    @Inject private UserInfoDataClient userInfoDataClient;
 
     @Test(groups ="web")
     public void ValidCredentials() {
         Page(HomePage.class).getLoginPage();
         Page(LoginPage.class).getCreateAccountPage();
         Page(CreateAccountPage.class)
-                .fillFirstName(dataSetsClient.getValue("FirstName",String.class))
-                .fillLastName(dataSetsClient.getValue("LastName",String.class))
-                .fillEmailId(dataSetsClient.getValue("Email",String.class))
-                .fillPassword(dataSetsClient.getValue("Password",String.class))
+                .fillFirstName(userInfoDataClient.getUiDetails().getFirstName())
+                .fillLastName(userInfoDataClient.getUiDetails().getLastName())
+                .fillEmailId(userInfoDataClient.getUiDetails().getEmail())
+                .fillPassword(userInfoDataClient.getUiDetails().getPassword())
                 .clickCreateButton();
     }
 
@@ -33,9 +34,9 @@ public class BuyerRegistrationTest extends WebTest {
         Page(HomePage.class).getLoginPage();
         Page(LoginPage.class).getCreateAccountPage();
         Page(CreateAccountPage.class)
-                .fillFirstName(dataSetsClient.getValue("FirstName",String.class))
-                .fillLastName(dataSetsClient.getValue("LastName",String.class))
-                .fillPassword(dataSetsClient.getValue("Password",String.class))
+                .fillFirstName(userInfoDataClient.getUiDetails().getFirstName())
+                .fillLastName(userInfoDataClient.getUiDetails().getLastName())
+                .fillPassword(userInfoDataClient.getUiDetails().getPassword())
                 .clickCreateButton();
     }
     @Test(enabled = false)
@@ -43,9 +44,9 @@ public class BuyerRegistrationTest extends WebTest {
         Page(HomePage.class).getLoginPage();
         Page(LoginPage.class).getCreateAccountPage();
         Page(CreateAccountPage.class)
-                .fillFirstName(dataSetsClient.getValue("FirstName",String.class))
-                .fillLastName(dataSetsClient.getValue("LastName",String.class))
-                .fillEmailId(dataSetsClient.getValue("Email",String.class))
+                .fillFirstName(userInfoDataClient.getUiDetails().getFirstName())
+                .fillLastName(userInfoDataClient.getUiDetails().getLastName())
+                .fillEmailId(userInfoDataClient.getUiDetails().getEmail())
                 .clickCreateButton();
     }
     @Test(enabled = false)
@@ -58,8 +59,8 @@ public class BuyerRegistrationTest extends WebTest {
     public void login(){
         Page(HomePage.class).getLoginPage();
         Page(LoginPage.class)
-                .fillEmailId(dataSetsClient.getValue("Email",String.class))
-                .fillPassword(dataSetsClient.getValue("Password",String.class))
+                .fillEmailId(userInfoDataClient.getUiDetails().getEmail())
+                .fillPassword(userInfoDataClient.getUiDetails().getPassword())
                 .clickOnSignInButton();
     }
 }

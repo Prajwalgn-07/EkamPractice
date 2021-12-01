@@ -16,6 +16,7 @@ public class LoginScreen extends MobileScreen {
         textbox(passwordTextBox).setText("secret_sauce");
         element(loginButton).click();
         return this;
+
     }
 
     @MobileStep(keyword = "Then", description = "If cart is displayed")

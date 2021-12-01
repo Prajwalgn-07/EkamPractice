@@ -10,10 +10,8 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class LoginTest extends MobileTest {
-
     @Test(groups = "mobile")
     public void mobileExampleTest() {
-
         boolean cartDisplayed = Screen(LoginScreen.class)
                 .login()
                 .isCartDisplayed();

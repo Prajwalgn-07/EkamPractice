@@ -1,15 +1,22 @@
 {
   "desiredCapabilities": [
     {
+      "app": "sample.app",
+      "platformName": "ios",
+      "automationName": "XCUITest",
+      "newCommandTimeout": 300,
+      "autoGrantPermissions": true,
+      "noReset": true,
+      "fullReset": false,
+      "avdLaunchTimeout": 300,
+      "autoAcceptAlerts": true,
+      "useKeystore": false
+    },
+    {
       "app": "sample_app.apk",
       "platformName": "android",
       "automationName": "UiAutomator2",
       "appWaitActivity": "com.swaglabsmobileapp.MainActivity"
-    },
-    {
-      "app": "sample_app.ipa",
-      "platformName": "iOS",
-      "automationName": "XCUITest"
     }
   ]
 }

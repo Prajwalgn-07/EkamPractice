@@ -1,6 +1,12 @@
 {
+  "ui":[{
   "FirstName": "Alice",
   "LastName": "Mark",
-  "Email": "test133@mail.com",
+  "Email": "test133mm@mail.com",
   "Password": "1234533"
+}],
+  "api": [{
+    "emailId": "eve.holt@reqres.in",
+    "password": "cityslicka"
+  }]
 }

@@ -139,6 +139,11 @@ task runDbTests(type: Test) {
         excludeTestsMatching "*.mobile.*"
         excludeTestsMatching "*.api.*"
     }
+    systemProperties = [
+            config: System.getProperty("config"),
+            DB_USERNAME: System.getProperty("DB_USERNAME"),
+            DB_PASSWORD: System.getProperty("DB_PASSWORD")
+    ]
     outputs.upToDateWhen { false }
     useTestNG {
         parallel = "methods"
